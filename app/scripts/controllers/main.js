@@ -6,7 +6,7 @@ angular.module('rdnApp')
       .state('main', {
         url: '/',
         templateUrl: 'views/main.html',
-        controller: 'MainController',
+        controller: 'MainCtrl',
         controllerAs: 'main'
       });
   });
@@ -20,6 +20,6 @@ angular.module('rdnApp')
  * Controller of the rdnApp
  */
 angular.module('rdnApp')
-  .controller('MainController', function () {
+  .controller('MainCtrl', function () {
     
   });

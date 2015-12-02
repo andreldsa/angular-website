@@ -7,13 +7,21 @@
  * # navbar
  */
 angular.module('rdnApp')
+  
+
+angular.module('rdnApp')
   .directive('navbar', function () {
     return {
       templateUrl: 'views/navbar.html',
       restrict: 'E',
+      scope: {},
       link: function (scope, element) {
         element.addClass('navbar');
+      },
+      controller: function($scope) {
+      	 $scope.categoria = function(id) {
+	    	console.log(">>>>>>>>>>>>>>>>> id: ",id);
+	    };
       }
     };
   });
-

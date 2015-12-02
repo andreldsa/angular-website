@@ -15,13 +15,8 @@ angular
     'ngTouch',
     'ui.router'
   ])
-  .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
       .otherwise('/');
     $locationProvider.html5Mode(true);
   });
-
-angular.module('rdnApp').run(['$state', '$stateParams',
-    function($state, $stateParams) {
-        //this solves page refresh and getting back to state
-}]);

@@ -6,7 +6,7 @@ angular.module('rdnApp')
       .state('about', {
         url: '/about',
         templateUrl: 'views/about.html',
-        controller: 'AboutController',
+        controller: 'AboutCtrl',
         controllerAs: 'about'
       });
   });
@@ -19,7 +19,7 @@ angular.module('rdnApp')
  * Controller of the rdnApp
  */
 angular.module('rdnApp')
-  .controller('AboutController', function () {
+  .controller('AboutCtrl', function () {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
