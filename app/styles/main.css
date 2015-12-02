@@ -1,0 +1,40 @@
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus {
+    background-color: rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+}
+
+.navbar .dropdown .dropdown-menu li a {
+  color: black;
+}
+
+.navbar-text {
+  margin-left: 15px;
+}
+
+.nav-custom li a {
+    color: white;
+}
+
+.nav-custom {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.brand-rdn {
+  position: absolute;
+  z-index: 2;
+  width: 20%;
+}
+
+footer.footer {
+  background: -moz-linear-gradient(#171717, #2E2E2E); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#171717, #2E2E2E); /* Standard syntax */
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 70px;
+  margin-bottom: auto;
+  color: #FFF;
+}
+
+footer.footer a {
+  color: #FFF;
+}

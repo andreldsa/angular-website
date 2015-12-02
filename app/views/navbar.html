@@ -1,0 +1,123 @@
+<!-- Navigation -->
+<nav id="navbar" class="navbar navbar-fixed-top nav-custom" role="navigation">
+    <div class="container">
+        <img src="http://racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/logo_top.png" class="img-responsive brand-rdn"/>
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <a class="navbar-brand" href=""></a>
+            </button>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="/">Início</a>
+                </li>
+                <li>
+                    <a href="services.html">Serviços</a>
+                </li>
+                <li>
+                    <a href="">Regulamento</a>
+                </li>
+                <li>
+                    <a href="/about">Contato</a>
+                </li>
+                <li>
+                    <a href="contact.html">Pilotos</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resultados <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="portfolio-1-col.html">250/300 STK</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-2-col.html">250/300 PRO</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-3-col.html">Copa Ninja 300</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-4-col.html">600 STK</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-item.html">600 PRO</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-item.html">1000 STK</a>
+                        </li>
+                        <li>
+                            <a href="portfolio-item.html">1000 SBK</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide"  data-ride="carousel">
+    
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src='http://photos.motogp.com/2015/11/25/05-zarco-rsm_gp_7944.topcontent_fullhd.jpg' class="fill" >
+            <div class="carousel-caption">
+                <h2>Moto GP 2015</h2>
+            </div>
+        </div>
+        <div class="item">
+            <img src='http://photos.motogp.com/2015/11/26/26-pedrosa_dcp4483_0.big.jpg' class="fill">
+            <div class="carousel-caption">
+                <h2>Lorenzo ganha GP de Jerez</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
+
+<!-- Script to Activate the Carousel -->
+<script>
+$('.carousel').carousel({
+    interval: 5000 //changes the speed
+});
+
+var targetOffset = $(".carousel-indicators").offset().top;
+
+var $w = $(window).scroll(function(){
+    if ( $w.scrollTop() > targetOffset ) {   
+        $('#navbar').fadeIn('slow', function() {
+            $('#navbar').addClass('navbar-inverse');
+            $('#navbar').removeClass('nav-custom');
+            $('.brand-rdn').fadeOut();
+        })
+    } else {
+        $('#navbar').fadeIn('slow', function() { 
+            $('#navbar').removeClass('navbar-inverse');
+            $('#navbar').addClass('nav-custom');
+            $('.brand-rdn').fadeIn();
+        })
+    }
+});
+</script>
