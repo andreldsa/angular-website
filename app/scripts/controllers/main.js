@@ -20,6 +20,19 @@ angular.module('rdnApp')
  * Controller of the rdnApp
  */
 angular.module('rdnApp')
-  .controller('MainCtrl', function () {
-    
+  .controller('MainCtrl', function ($scope, ImageService, $anchorScroll, $location) {
+
+    $scope.limit = 9;
+
+    $scope.maisFotos = function() {
+      $scope.limit = $scope.limit + 3;
+      $location.hash('mais-fotos');
+      $anchorScroll();
+    }
+
+    $scope.images = [];
+
+    ImageService.getImagesGallery().then(function(payload) {
+      $scope.images = payload.data;
+    })
   });

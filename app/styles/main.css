@@ -22,7 +22,23 @@
 .brand-rdn {
   position: absolute;
   z-index: 2;
-  width: 20%;
+  margin-top: 8px;
+  width: 28%;
+}
+
+.navbar-brand > a:hover {
+  color: black;
+}
+
+.navbar .navbar-brand {
+  font-size: 2em;
+  font-weight: bold;
+  color: #FF4000;
+  text-shadow: 0.5px 0.5px 0.5px white, -1px -1px 0.5px white, 1px -1px 0.5px white, -0.5px 0.5px 0.5px white, 0.5px 0.5px 0.5px white;
+}
+
+.hidden {
+  display: none;
 }
 
 footer.footer {

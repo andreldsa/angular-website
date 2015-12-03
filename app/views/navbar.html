@@ -1,7 +1,8 @@
 <!-- Navigation -->
 <nav id="navbar" class="navbar navbar-fixed-top nav-custom" role="navigation">
     <div class="container">
-        <img src="http://racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/logo_top.png" class="img-responsive brand-rdn"/>
+        <a class="navbar-brand hidden" href="#">RACING DAY NORDESTE</a>
+        <img src="styles/images/rdn-gp-brand.png" class="img-responsive brand-rdn"/>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -111,12 +112,14 @@ var $w = $(window).scroll(function(){
             $('#navbar').addClass('navbar-inverse');
             $('#navbar').removeClass('nav-custom');
             $('.brand-rdn').fadeOut();
+            $('.navbar-brand').removeClass('hidden');
         })
     } else {
         $('#navbar').fadeIn('slow', function() { 
             $('#navbar').removeClass('navbar-inverse');
             $('#navbar').addClass('nav-custom');
             $('.brand-rdn').fadeIn();
+            $('.navbar-brand').addClass('hidden');
         })
     }
 });
