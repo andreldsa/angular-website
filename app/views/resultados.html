@@ -1,1 +1,32 @@
-Página de resultados da Categoria {{idCategoria}}
+<!-- Page Content -->
+<div id="content" class="container">
+
+    <!-- Marketing Icons Section  -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">
+                Resultado da categoria {{nomeCategoria}}
+            </h1>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="table-responsive">
+	    	<table class="table table-hover">
+	    		<tr>
+				  <td class="active text-center col-md-1">Ranking</td>
+				  <td class="success">Nome</td>
+				  <td class="warning text-center col-md-1">Pontos</td>
+				</tr>
+				<tr data-ng-repeat="resultado in resultados | orderBy:'parseInt(pontuacao)':reverse"
+					data-ng-click="open(resultado.Piloto_idPiloto)">
+				  <td class="active text-center">{{$index+1}}</td>
+				  <td class="success">{{resultado.nomePiloto}}</td>
+				  <td class="warning text-center">{{resultado.pontuacao | number}}</td>
+				</tr>
+			</table>	
+    	</div>
+    </div>
+</div>
+
+<footer></footer>
+

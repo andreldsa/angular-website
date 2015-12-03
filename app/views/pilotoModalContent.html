@@ -1,0 +1,32 @@
+<div class="modal-header">
+    <h3 class="modal-title">Resultado Individual: <b>{{nomePiloto}}</b></h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+            <div class="table-responsive">
+                <table class="table table-hover text-center table-striped">
+                    <tr>
+                      <td class="active">Etapa</td>
+                      <td class="active">Posição BT 1</td>
+                      <td class="active">Tempo BT 1</td>
+                      <td class="active">Posição BT 2</td>
+                      <td class="active">Tempo BT 2</td>
+                      <td class="active">Pontuação</td>
+                    </tr>
+                    <tr data-ng-repeat="resultado in items | orderBy:'parseInt(Etapa_numEtapa)'"
+                        data-ng-click="open(resultado.Piloto_idPiloto)">
+                      <td>{{resultado.Etapa_numEtapa | number}}</td>
+                      <td>{{resultado.posbt1 | number}}</td>
+                      <td>{{resultado.tempobt1}}</td>
+                      <td>{{resultado.posbt2 | number}}</td>
+                      <td>{{resultado.tempobt2}}</td>
+
+                      <td>{{calculaPontos(resultado)}}</td>
+                    </tr>
+                </table>    
+            </div>
+        </div>
+    </div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+</div>
