@@ -26,6 +26,7 @@ angular.module('rdnApp')
   	if(!$scope.idCategoria) {
   		$state.go('main');
   	}
+    $('[data-toggle="tooltip"]').tooltip();
 
     $scope.resultadosPiloto = {};
   	$scope.resultados = {};

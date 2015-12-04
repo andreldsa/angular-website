@@ -11,17 +11,22 @@
     </div>
     <div class="row">
     	<div class="table-responsive">
-	    	<table class="table table-hover">
-	    		<tr>
+	    	<table class="table table-hover table-striped">
+	    		<tr style="font-weight:bold;">
 				  <td class="active text-center col-md-1">Ranking</td>
-				  <td class="success">Nome</td>
-				  <td class="warning text-center col-md-1">Pontos</td>
+				  <td class="active">Nome</td>
+				  <td class="active text-center col-md-1">Pontos</td>
 				</tr>
 				<tr data-ng-repeat="resultado in resultados | orderBy:'parseInt(pontuacao)':reverse"
-					data-ng-click="open(resultado.Piloto_idPiloto)">
-				  <td class="active text-center">{{$index+1}}</td>
-				  <td class="success">{{resultado.nomePiloto}}</td>
-				  <td class="warning text-center">{{resultado.pontuacao | number}}</td>
+					data-ng-click="open(resultado.Piloto_idPiloto)" 
+          			uib-tooltip="Clique para abrir resultado individual de {{resultado.nomePiloto}}."
+		         	tooltip-placement="top"
+		         	tooltip-class="tooltip-custom"
+		          	tooltip-trigger="mouseenter"
+		          	tooltip-enable="!inputModel">
+				  <td class="text-center">{{$index+1}}</td>
+				  <td>{{resultado.nomePiloto}}</td>
+				  <td class="text-center">{{resultado.pontuacao | number}}</td>
 				</tr>
 			</table>	
     	</div>

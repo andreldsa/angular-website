@@ -68,6 +68,11 @@ header.carousel .fill {
     font-style: italic;
 }
 
+.tooltip-custom .tooltip-inner {
+    background: #BA2800;
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
 /* Footer Styles */
 
 footer {
