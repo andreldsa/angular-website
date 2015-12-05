@@ -41,13 +41,52 @@
   display: none;
 }
 
+.painel-highlight {
+  text-align: left;
+  color: #FFF;
+  margin-bottom: 30px;
+  margin-top: 0px;
+}
+
+.painel-highlight .page-header {
+  font-size: 2em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0.5px 0.5px 0.5px black, -1px -1px 0.5px black, 1px -1px 0.5px black, -0.5px 0.5px 0.5px black, 0.5px 0.5px 0.5px black;
+}
+
+.copyright {
+  padding: 30px;
+}
+
+.news {
+  height: 100px;
+}
+
+.panel-red {
+  border-color: #C24646;
+}
+
+.panel-red .panel-heading {
+  background: #C24646;
+  color: white;
+}
+
+.panel-gold {
+  border-color: #DE912C;
+}
+
+.panel-gold .panel-heading {
+  background: #DE912C;
+  color: white;
+}
+
 footer.footer {
-  background: -moz-linear-gradient(#171717, #2E2E2E); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#171717, #2E2E2E); /* Standard syntax */
+  background: -moz-linear-gradient(#2E2E2E, #171717); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#2E2E2E, #171717); /* Standard syntax */
   text-align: center;
-  padding: 30px 0;
-  margin-top: 70px;
   margin-bottom: auto;
+  margin-top: 70px;
   color: #FFF;
 }
 

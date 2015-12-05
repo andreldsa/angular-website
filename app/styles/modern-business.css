@@ -36,11 +36,24 @@ header.carousel .carousel-inner {
     height: 100%;
 }
 
+header.carousel .carousel-caption {
+    text-shadow: 1px 1px 3px rgba(0,0,0,.6);
+}
+
 header.carousel .fill {
     width: 100%;
     height: auto;
     background-position: center;
     background-size: cover;
+}
+
+header a, 
+header a:hover, 
+header a:active,
+header a:link,
+header a:visited {
+    color: white;
+    text-decoration: none;
 }
 
 /* 404 Page Styles */

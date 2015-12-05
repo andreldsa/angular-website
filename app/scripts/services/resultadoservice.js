@@ -9,8 +9,8 @@
  */
 angular.module('rdnApp')
   .service('ResultadoService', function ($http, $q) {
-  	var RESULTADOS_URL = 'http://racingdaynordeste.com.br/wp-json/api/v1/resultado/categoria/';
-    var RESULTADOS_PILOTO_URL = 'http://racingdaynordeste.com.br/wp-json/api/v1/resultado/piloto/';
+  	var RESULTADOS_URL = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/resultado/categoria/';
+    var RESULTADOS_PILOTO_URL = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/resultado/piloto/';
 
     var NOMES_CATEGORIAS = [
       '1000 SBK Pro',

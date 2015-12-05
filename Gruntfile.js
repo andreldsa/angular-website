@@ -403,6 +403,13 @@ module.exports = function (grunt) {
           src: [
             '.htaccess'
           ]
+        }, {
+          expand: true,
+          cwd: '/',
+          dest: '<%= yeoman.dist %>/scripts',
+          src: [
+            'contat_me.php'
+          ]
         }]
       },
       styles: {
@@ -439,13 +446,13 @@ module.exports = function (grunt) {
     'ftp-deploy': {
       build: {
         auth: {
-          host: 'aguinaldoabrantes.com',
+          host: 'racingdaynordeste.com.br',
           port: 21,
           authKey: 'key1',
           authPath: '.ftppass'
         },
         src: '<%= yeoman.dist %>',
-        dest: 'public_html/teste'
+        dest: 'public_html/'
       }
     }
   });

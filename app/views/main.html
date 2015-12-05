@@ -9,35 +9,91 @@
             </h1>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-check"></i> Regulamento</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                    <p class="news">Saiba mais sobre todas as regras da competição.<br>Cronometragem, pontuação, infrações, comissão técnica, inscrições treinos e muito mais...<br><br>Faça o Download do arquivo abaixo.</p>
+                    <a href="http://api.racingdaynordeste.com.br/wp-content/uploads/2014/01/REGULAMENTO-RDN_2015_30_01.pdf" class="btn btn-primary">Download</a>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-red">
                 <div class="panel-heading">
                     <h4><i class="fa fa-fw fa-gift"></i> Resultados</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                    <p>Veja os resultados de todas as etapas de 2015, por categoria e resultados individuais. Classificação, tempos e pontuações de cada piloto...<br><br>Escolha abaixo a categoria desejada</p>
+                    <div class="dropdown">
+                      <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Categorias
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '7'})">250/300 PRO</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '6'})">250/300 STK</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '5'})">Copa Ninja 300cc</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '4'})">600 STK</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '3'})">600 SS PRO</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '2'})">1000 STK</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '1'})">1000 SBK Pro</a>
+                            </li>
+                        </ul>   
+                    </div>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-default">
+            <div class="panel panel-default panel-gold">
                 <div class="panel-heading">
-                    <h4><i class="fa fa-fw fa-compass"></i> Cronograma</h4>
+                    <h4><i class="fa fa-fw fa-compass"></i>Pilotos</h4>
                 </div>
                 <div class="panel-body">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
-                    <a href="#" class="btn btn-default">Learn More</a>
+                    <p class="news">Conheça todos os pilotos do Racing Day Nordeste, suas histórias e conquistas no mundo da Motovelocidade. Acompanhe a trajetória do seu piloto favorito...</p>
+                    <div class="dropdown">
+                      <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Categorias
+                        <span class="caret"></span>
+                      </button>
+                      <ul class="dropdown-menu">
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '7'})">250/300 PRO</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '6'})">250/300 STK</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '5'})">Copa Ninja 300cc</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '4'})">600 STK</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '3'})">600 SS PRO</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '2'})">1000 STK</a>
+                            </li>
+                            <li>
+                                <a ui-sref="resultados({idCategoria: '1'})">1000 SBK Pro</a>
+                            </li>
+                        </ul>   
+                    </div>
                 </div>
             </div>
         </div>
@@ -88,14 +144,38 @@
         <div class="panel-body">
             <div class="row">
                 <div class="mb-xl text-center">
-                    <img  src="http://racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/cbm.jpg"/>
-                    <img  src="http://racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/fepem.jpg"/>
-                    <img  src="http://racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/pirelli.jpg"/>
+                    <img  src="http://api.racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/cbm.jpg"/>
+                    <img  src="http://api.racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/fepem.jpg"/>
+                    <img  src="http://api.racingdaynordeste.com.br/wp-content/themes/simplenbright/library/images/pirelli.jpg"/>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<div class="painel-highlight" id="servicos">
+    <!-- Services -->
+    <div class='container'>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">AGB Service</h2>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                    <img class="img-responsive img-service img-hover" src="http://api.racingdaynordeste.com.br/wp-content/uploads/2013/07/ambulancia.jpg">
+            </div>
+            <div class="col-md-4 col-sm-6">
+                    <img class="img-responsive img-service img-hover" src="http://api.racingdaynordeste.com.br/wp-content/uploads/2013/07/cronometragem.jpg">
+            </div>
+            <div class="col-md-4 col-sm-6">
+                    <img class="img-responsive img-service img-hover" src="http://api.racingdaynordeste.com.br/wp-content/uploads/2013/07/fotos.jpg">
+            </div>
+            <div class="col-md-4 col-sm-6">
+                    <img class="img-responsive img-service img-hover" src="http://api.racingdaynordeste.com.br/wp-content/uploads/2013/07/transporte.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <footer></footer>
 

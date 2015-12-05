@@ -10,7 +10,7 @@
 angular.module('rdnApp')
   .service('ImageService', function ($http, $q) {
 
-  	var GALLERY_URL = 'http://racingdaynordeste.com.br/wp-json/api/v1/media/gallery';
+  	var GALLERY_URL = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/media/gallery';
 
   	function getImagesGallery() {
   		var deferred = $q.defer();
