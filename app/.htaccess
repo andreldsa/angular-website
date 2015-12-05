@@ -1,6 +1,6 @@
 RewriteEngine on
 #let the php framework do its thing
-RewriteRule ^(api/.*)$ index.php?url=$1 [QSA,L,NC]
+#RewriteRule ^(api/.*)$ index.php?url=$1 [QSA,L,NC]
 #let angular do its thing
 RewriteCond %{REQUEST_FILENAME} !-f      
 RewriteCond %{REQUEST_FILENAME} !-d
