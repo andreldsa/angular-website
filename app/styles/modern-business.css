@@ -28,6 +28,8 @@ body {
 header.carousel {
     height: 80%;
     margin-top: -40px;
+    background: -moz-linear-gradient(#2E2E2E, #171717); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#2E2E2E, #171717); /* Standard syntax */ 
 }
 
 header.carousel .item,
@@ -93,8 +95,28 @@ footer {
 }
 
 /* Responsive Styles */
+@media(max-width:1920px) {
+    header.carousel {
+        height: 80%;
+    }
+}
 
-@media(max-width:991px) {
+@media(max-width:1500px) {
+    header.carousel {
+        height: 70%;
+    }
+}
+
+@media(max-width:1250px) {
+    header.carousel {
+        height: 60%;
+    }
+}
+
+@media(max-width:1024px) {
+    header.carousel {
+        height: 50%;
+    }
     .customer-img,
     .img-related {
         margin-bottom: 30px;
@@ -102,6 +124,10 @@ footer {
 }
 
 @media(max-width:767px) {
+    header.carousel {
+        height: 30%;
+    }
+
     .img-portfolio {
         margin-bottom: 15px;
     }
