@@ -11,18 +11,28 @@ angular.module('rdnApp')
   .service('ImageService', function ($http, $q) {
 
   	var GALLERY_URL = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/media/gallery';
+    var SLIDE_URL = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/media/slide';
+
+    function get(URL) {
+      var deferred = $q.defer();
+      $http.get(URL).then(function(data) {
+        deferred.resolve(data);
+      }, function(error) {
+        deferred.reject(error);
+      });
+      return deferred.promise;
+    }
 
   	function getImagesGallery() {
-  		var deferred = $q.defer();
-  		$http.get(GALLERY_URL).then(function(data) {
-  			deferred.resolve(data);
-  		}, function(error) {
-  			deferred.reject(error);
-  		});
-  		return deferred.promise;
+  		return get(GALLERY_URL);
   	}
 
+    function getSlides() {
+      return get(SLIDE_URL);
+    }
+
   	return {
-  		getImagesGallery: getImagesGallery
+  		getImagesGallery: getImagesGallery,
+      getSlides: getSlides
   	};
   });

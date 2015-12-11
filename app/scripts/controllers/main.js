@@ -26,13 +26,13 @@ angular.module('rdnApp')
 
     $scope.maisFotos = function() {
       $scope.limit = $scope.limit + 3;
-    }
+    };
 
     $scope.images = [];
 
     ImageService.getImagesGallery().then(function(payload) {
       $scope.images = payload.data;
-    })
+    });
 
     $scope.open = function (image) {
         $uibModal.open({
