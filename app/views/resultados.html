@@ -9,9 +9,19 @@
             </h1>
         </div>
     </div>
+    <div class="row hide-print">
+    	<ul class="nav nav-tabs">
+		  <li role="presentation" data-ng-class="porEtapas ? '':'active'"><a href="" data-ng-click="porEtapas=false">Ranking Geral</a></li>
+		  <li role="presentation" data-ng-class="porEtapas ? 'active':''"><a href="" data-ng-click="porEtapas=true">Etapas</a></li>
+		  <li class="pull-right" data-ng-class="print ? 'active':''" role="presentation"><a href="" data-ng-click="print=!print">Tudo</a></li>
+		</ul>
+    </div>
     <div class="row">
+    	<a class="btn btn-danger pull-right hide-print" style="margin:10px;" href="" onclick="window.print();return false;" >Imprimir</a>
+    </div>
+    <div class="row" data-ng-if="!porEtapas || print">
     	<div class="table-responsive">
-	    	<table class="table table-hover table-striped">
+	    	<table class="table table-hover table-striped printable">
 	    		<tr style="font-weight:bold;">
 				  <td class="active text-center col-md-1">Ranking</td>
 				  <td class="active">Nome</td>
@@ -30,6 +40,37 @@
 				</tr>
 			</table>	
     	</div>
+    </div>
+	<div class="row" data-ng-if="porEtapas || print">
+            <div class="table printable" data-ng-repeat="etapa in resultadosEtapa | orderBy:'numEtapa'">
+        	    <div class="row">
+        	    	<div class="col-lg-12">
+			            <h1 class="page-header">
+			                Etapa {{etapa.numEtapa}}
+			            </h1>
+		        	</div>	
+			    </div>
+                <table class="table table-hover text-center table-striped printable">
+                    <tr>
+                      <td class="active">Piloto</td>
+                      <td class="active">Posição BT 1</td>
+                      <td class="active">Tempo BT 1</td>
+                      <td class="active">Posição BT 2</td>
+                      <td class="active">Tempo BT 2</td>
+                      <td class="active">Pontuação</td>
+                    </tr>
+                    <tr data-ng-repeat="resultado in etapa.resultados | orderBy:'parseInt(Etapa_numEtapa)'">
+                      <td class="text-left">{{resultado.nomePiloto}}</td>
+                      <td>{{resultado.posbt1 | number}}</td>
+                      <td>{{resultado.tempobt1}}</td>
+                      <td>{{resultado.posbt2 | number}}</td>
+                      <td>{{resultado.tempobt2}}</td>
+
+                      <td>{{calculaPontos(resultado)}}</td>
+                    </tr>
+                </table>    
+            </div>
+        </div>
     </div>
 </div>
 

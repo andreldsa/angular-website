@@ -136,3 +136,13 @@ footer {
         height: 70%;
     }
 }
+
+@media print {
+    .printable {
+        page-break-inside: avoid;
+    }
+
+    .hide-print {
+        display: none;
+    }
+}

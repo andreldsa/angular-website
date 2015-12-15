@@ -21,6 +21,9 @@ angular.module('rdnApp')
  */
 angular.module('rdnApp')
   .controller('ResultadosCtrl', function ($scope, $state, $stateParams, ResultadoService, $uibModal) {
+    $scope.porEtapas = false;
+    $scope.print = false;
+
   	$scope.idCategoria = $stateParams.idCategoria;
 
   	if(!$scope.idCategoria) {
@@ -29,7 +32,7 @@ angular.module('rdnApp')
     $('[data-toggle="tooltip"]').tooltip();
 
     $scope.resultadosPiloto = {};
-  	$scope.resultados = {};
+    $scope.resultadosEtapa = [];
     $scope.nomeCategoria = ResultadoService.getNomeCategoria($scope.idCategoria);
 
   	ResultadoService.getPorCategoria('2015', $scope.idCategoria).then(function(payload) {
@@ -37,6 +40,25 @@ angular.module('rdnApp')
   	}, function(error) {
   		console.log(error);
   	});
+
+    ResultadoService.getEtapas('2015').then(function(payload) {
+      var etapas = payload.data;
+      angular.forEach(etapas, function(etapa, numEtapa) {
+        ResultadoService.getEtapaCategoria('2015', etapa.num_etapa, $scope.idCategoria).then(function(info) {
+          var resultados = {
+            numEtapa: etapa.num_etapa,
+            resultados: info.data
+          };
+          $scope.resultadosEtapa.push(resultados);
+        });
+      });
+    });
+
+    $scope.calculaPontos = function (resultado) {
+      var pontos1 = parseInt(resultado.pontos1);
+      var pontos2 = parseInt(resultado.pontos2);
+      return pontos1 + pontos2;
+    };
 
     $scope.animationsEnabled = true;
 

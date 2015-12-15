@@ -11,6 +11,8 @@ angular.module('rdnApp')
   .service('ResultadoService', function ($http, $q) {
   	var RESULTADOS_URL = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/resultado/categoria/';
     var RESULTADOS_PILOTO_URL = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/resultado/piloto/';
+    var RESULTADOS_ETAPA_CATEGORIA = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/etapa/';
+    var GET_ETAPAS = 'http://api.racingdaynordeste.com.br/wp-json/api/v1/etapas/';
 
     var NOMES_CATEGORIAS = [
       '1000 SBK Pro',
@@ -22,9 +24,9 @@ angular.module('rdnApp')
       '250/300 PRO'
     ];
 
-    function get(url) {
+    function get(url, data) {
       var deferred = $q.defer();
-      $http.get(url).then(function(data) {
+      $http.get(url, data).then(function(data) {
         deferred.resolve(data);
       }, function(msg) {
         deferred.reject(msg);
@@ -46,9 +48,21 @@ angular.module('rdnApp')
       return NOMES_CATEGORIAS[id-1];
     }
 
+    function getEtapaCategoria(ano, etapa, id) {
+      var url = RESULTADOS_ETAPA_CATEGORIA + ano + '/' + etapa + '/categoria/' + id;
+      return get(url);
+    }
+
+    function getEtapas(ano) {
+      var url = GET_ETAPAS + ano;
+      return get(url);
+    }
+
     return {
       getPorCategoria: getPorCategoria,
       getResultadoPiloto: getResultadoPiloto,
-      getNomeCategoria: getNomeCategoria
+      getNomeCategoria: getNomeCategoria,
+      getEtapaCategoria: getEtapaCategoria,
+      getEtapas: getEtapas
     };
 });
