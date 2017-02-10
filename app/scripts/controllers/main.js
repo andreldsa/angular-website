@@ -30,6 +30,12 @@ angular.module('rdnApp')
 
     $scope.images = [];
 
+    $scope.recordes = [];
+
+    ImageService.getRecordes().then(function(payload) {
+      $scope.recordes = payload.data;
+    });
+
     ImageService.getImagesGallery().then(function(payload) {
       $scope.images = payload.data;
     });
@@ -47,11 +53,34 @@ angular.module('rdnApp')
           }
         });      
     };
+
+    $scope.openRecord = function (record) {
+        $uibModal.open({
+          animation: true,
+          templateUrl: 'views/recordModalContent.html',
+          controller: 'RecordsCtrl',
+          size: 'lg',
+          resolve: {
+            record: function () {
+              return record;
+            }
+          }
+        });      
+    };
   });
 
 angular.module('rdnApp').controller('GalleryCtrl', function ($scope, $uibModalInstance, image) {
 
   $scope.image = image;
+
+  $scope.ok = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+});
+
+angular.module('rdnApp').controller('RecordsCtrl', function ($scope, $uibModalInstance, record) {
+
+  $scope.record = record;
 
   $scope.ok = function () {
     $uibModalInstance.dismiss('cancel');

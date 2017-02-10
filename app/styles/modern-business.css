@@ -8,7 +8,7 @@
 
 html,
 body {
-    height: 100%;
+    height: 80%;
 }
 
 .img-portfolio {
@@ -44,7 +44,6 @@ header.carousel .carousel-caption {
 
 header.carousel .fill {
     width: 100%;
-    height: auto;
     background-position: center;
     background-size: cover;
 }

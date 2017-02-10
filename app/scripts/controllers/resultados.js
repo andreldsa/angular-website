@@ -26,6 +26,8 @@ angular.module('rdnApp')
 
   	$scope.idCategoria = $stateParams.idCategoria;
 
+  	var ANO = '2016';
+
   	if(!$scope.idCategoria) {
   		$state.go('main');
   	}
@@ -35,16 +37,16 @@ angular.module('rdnApp')
     $scope.resultadosEtapa = [];
     $scope.nomeCategoria = ResultadoService.getNomeCategoria($scope.idCategoria);
 
-  	ResultadoService.getPorCategoria('2015', $scope.idCategoria).then(function(payload) {
+  	ResultadoService.getPorCategoria(ANO, $scope.idCategoria).then(function(payload) {
   		$scope.resultados = payload.data;
   	}, function(error) {
   		console.log(error);
   	});
 
-    ResultadoService.getEtapas('2015').then(function(payload) {
+    ResultadoService.getEtapas(ANO).then(function(payload) {
       var etapas = payload.data;
       angular.forEach(etapas, function(etapa, numEtapa) {
-        ResultadoService.getEtapaCategoria('2015', etapa.num_etapa, $scope.idCategoria).then(function(info) {
+        ResultadoService.getEtapaCategoria(ANO, etapa.num_etapa, $scope.idCategoria).then(function(info) {
           var resultados = {
             numEtapa: etapa.num_etapa,
             resultados: info.data
@@ -77,7 +79,7 @@ angular.module('rdnApp')
     }
 
     $scope.open = function (id) {
-      ResultadoService.getResultadoPiloto('2015', id).then(function(payload) {
+      ResultadoService.getResultadoPiloto(ANO, id).then(function(payload) {
         $scope.resultadosPiloto = payload.data;
         abrirModal();
       }, function(error) {

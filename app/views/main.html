@@ -1,6 +1,31 @@
 <!-- Page Content -->
 <div id="content" class="container">
 
+    <!-- Portfolio Section -->
+    <div class="row image">
+        <div class="col-lg-12">
+            <h1 class="page-header">Recordes 2017</h1>
+        </div>
+        <div class="row image">
+            <div class="col-md-4" data-ng-repeat="record in recordes | orderBy:'-post_date':reverse | limitTo:limit">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4><i class="fa fa-fw fa-check"></i> {{record.piloto}}</h4>
+                    </div>
+                    <a href="" data-ng-click="openRecord(record)">
+                        <div class="panel-body">
+                                <img class="img-responsive" data-ng-src="{{record.foto_capa}}" title="{{record.piloto}}">
+                        
+                        </div>
+                    </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Section -->
+
+    <!-- /.row -->
+
     <!-- Marketing Icons Section -->
     <div class="row">
         <div class="col-lg-12">

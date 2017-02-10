@@ -1,0 +1,24 @@
+<div id="content" class="container">
+
+    <!-- Features Section -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>{{record.piloto}}</h2>
+        </div>
+		<div class="col-lg-6">
+			<img class="img-responsive" data-ng-src="{{record.foto_corpo}}" title="{{record.piloto}}">
+		</div>
+        <div class="col-lg-3">
+            <p><strong>Novo Recorde na categoria</strong></p>
+            <ul>
+                <li><strong>Piloto</strong>: {{record.piloto}}</li>
+                <li><strong>Cidade</strong>: {{record.cidade}}</li>
+                <li><strong>Categoria</strong>: {{record.categoria}}</li>
+                <li><strong>Pista</strong>: {{record.autodromo}}</li>
+                <li><strong>Tempo</strong>: {{record.tempo}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row"><br>
+    </div>
+</div>

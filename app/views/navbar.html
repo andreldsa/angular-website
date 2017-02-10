@@ -115,7 +115,8 @@ $('.carousel').carousel({
     interval: 5000 //changes the speed
 });
 
-var targetOffset = $(".carousel-indicators").offset().top;
+//var targetOffset = $(".carousel-indicators").offset().top;
+var targetOffset = $(".container").offset().top;
 
 var $w = $(window).scroll(function(){
     if ( $w.scrollTop() > targetOffset ) {   
