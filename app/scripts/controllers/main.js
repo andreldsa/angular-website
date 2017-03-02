@@ -67,6 +67,21 @@ angular.module('rdnApp')
           }
         });      
     };
+
+    $scope.openUrl = function (url) {
+      var image = {'guid':url};
+      $uibModal.open({
+        animation: true,
+        templateUrl: 'views/slideModalContent.html',
+        controller: 'SlideModalCtrl',
+        size: 'lg',
+        resolve: {
+          image: function () {
+            return image;
+          }
+        }
+      });      
+    };
   });
 
 angular.module('rdnApp').controller('GalleryCtrl', function ($scope, $uibModalInstance, image) {
