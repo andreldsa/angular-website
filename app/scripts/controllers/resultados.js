@@ -26,7 +26,7 @@ angular.module('rdnApp')
 
   	$scope.idCategoria = $stateParams.idCategoria;
 
-  	var ANO = '2016';
+  	var ANO = '2017';
 
   	if(!$scope.idCategoria) {
   		$state.go('main');

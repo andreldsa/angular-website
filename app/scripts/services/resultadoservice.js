@@ -21,7 +21,8 @@ angular.module('rdnApp')
       '600 STK',
       'Copa Ninja 300cc',
       '250/300 STK',
-      '250/300 PRO'
+      '250/300 PRO',
+      '321cc R3'
     ];
 
     function get(url, data) {
